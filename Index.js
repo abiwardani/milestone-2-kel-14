@@ -7,7 +7,7 @@ import DiaryScreen from './DiaryScreen';
 import ProfileScreen from './ProfileScreen';
 
 const Stack = createStackNavigator();
-
+//untuk navigasi
 export default class App extends React.Component {
   render() {
     return (
