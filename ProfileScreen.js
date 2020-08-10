@@ -89,13 +89,7 @@ export default class App extends React.Component {
                   onChangeText={(tinggiBadan) => this.setState({ tinggiBadan })}
                   style={{ fontSize: 18, marginTop: 3, marginLeft: 65 }}
                 />
-                <Text style={{ fontSize: 24, marginTop: 3, marginLeft: 45 }}>
-                  Usia
-                </Text>
-                <TextInput
-                  onChangeText={(usia) => this.setState({ usia })}
-                  style={{ fontSize: 18, marginTop: 3, marginLeft: 65 }}
-                />
+      
 
                 <Text
                   style={{
@@ -112,17 +106,14 @@ export default class App extends React.Component {
                 </Text>
                 <Text style={{ fontSize: 18, marginTop: 3, marginLeft: 65 }}>
                   {Math.round(
-                    66 +
-                      13.7 * this.state.beratBadan +
-                      5 * this.state.tinggiBadan -
-                      6.8 * this.state.usia
+                    66 + 13.7 * this.state.beratBadan + 5 * this.state.tinggiBadan - 6.8 * this.state.usia
                   )}
                 </Text>
               </View>
 
               <TouchableOpacity>
                 <Icon
-                  style={{ color: "black", marginTop: 10, marginLeft: 145 }}
+                  style={{ color: "black", marginTop: 10, marginLeft: 72 }}
                   name="account-edit"
                   size={36}
                 />
@@ -132,17 +123,20 @@ export default class App extends React.Component {
         </View>
 
         <View style={styles.navigationBar}>
-          <TouchableOpacity style={styles.navigationBarIcon}>
+          <TouchableOpacity style={styles.navigationBarIcon}
+          onPress={() => this.props.navigation.navigate('Home')}>
             <Icon style={{ color: "black" }} name="home" size={34} />
             <Text style={{ fontSize: 18 }}>Home</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.navigationBarIcon}>
+          <TouchableOpacity style={styles.navigationBarIcon}
+          onPress={() => this.props.navigation.navigate('Diary')}>
             <Icon style={{ color: "black" }} name="book" size={34} />
             <Text style={{ fontSize: 18 }}>Diary</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.navigationBarIcon}>
+          <TouchableOpacity style={styles.navigationBarIcon}
+          onPress={() => this.props.navigation.navigate('Profile')}>
             <Icon style={{ color: "black" }} name="account" size={34} />
             <Text style={{ fontSize: 18 }}>Profile</Text>
           </TouchableOpacity>
