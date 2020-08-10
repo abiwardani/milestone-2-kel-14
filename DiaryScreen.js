@@ -57,6 +57,7 @@ export default class DiaryScreen extends React.Component {
    await this.setState({data:newArr});
   }
   nutritionCount=async (target)=>{
+	  //untuk menghitung nutrisi
     let data = await AsyncStorage.getItem('user');
     let dataJSON= JSON.parse(data);
     let processedData=dataJSON.Bob[this.state.processedDateString];
